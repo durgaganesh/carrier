@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<h1>Paintings</h1>
+<div id="paintings">
+  <% @paintings.each do |painting| %>
+    <div class="painting">
+      <%= image_tag painting.image_url(:thumb).to_s %>
+      <div class="name"><%= painting.name %></div>
+      <div class="actions">
+        <%= link_to "edit", edit_painting_path(painting) %> |
+        <%= link_to "remove", painting, :confirm => 'Are you sure?', :method => :delete %>
+      </div>
+    </div>
+  <% end %>
+  <div class="clear"></div>
+</div>
+<%= link_to 'Add a Painting', new_painting_path %>
+<%= link_to 'View Painting', paintings_path %>

@@ -1,0 +1,9 @@
+<h1>Painting</h1>
+
+<% for paint in @paintings %>
+
+    <h2><%= link_to paint.name, paint %></h2>
+  
+<% end %>
+
+<%= link_to 'New Painting', new_painting_path %>
